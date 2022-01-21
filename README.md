@@ -1,14 +1,20 @@
 # BlockChainProject
+
 ## 프로젝트 팀명 : CoLink
 
-### 	:relaxed: CoLink('코링크') - 블록체인 개념를 이해하고 적용해보기 위한 마이닝 사이트
+### :relaxed: CoLink
 
-## 프로젝트 시작일 : 2022-01-05
+### 블록체인 개념를 이해하고 적용해보기 위한 마이닝 사이트
+
+## 프로젝트 시작일 : 2021-01-05
 
 Member.
-#### 김혜린: [깃허브] (https://github.com/Hyerin1208)
-#### 박성근: [깃허브] (https://github.com/Mr-butter)
-#### 이민주: [깃허브] (https://github.com/codecocos)
+
+#### 김혜린: [깃허브] (https://github.com/Hyerin1208) :watermelon:
+
+#### 박성근: [깃허브] (https://github.com/Mr-butter) :grapes:
+
+#### 이민주: [깃허브] (https://github.com/codecocos) :strawberry:
 
 ## 목차
 
@@ -16,7 +22,7 @@ Member.
 
 [2.목적](#목적)
 
--   기존 서비스와의 차별점
+- 기존 서비스와의 차별점
 
 [3.전체 소스 코드](#전체-소스-코드-click)
 
@@ -28,21 +34,19 @@ Member.
 
 [7.상세 설명](#상세-설명)
 
--   DB 구조 (ERD)
+- DB 구조 (ERD)
 
--   전체 흐름도
+- 전체 흐름도
 
--   프로젝트 설명 PPT
+- 프로젝트 설명 PPT
 
 [8.참여인원](#참여-인원-4명)
 
 ---
 
-
 ### 개요
 
 블록체인 동작원리, 작업증명 알고리즘, 웹소켓을 이해하기 위한 프로젝트
-
 
 ### 목적
 
@@ -50,7 +54,6 @@ Member.
 > 웹소켓을 통한 양방향 통신의 이해
 > 노드기반 서버, 리액트 기반 클라이언트 작성
 > 서버-클라이언트-데이터베이스 연동
-
 
 ### 사용한 기술 요약
 
@@ -62,8 +65,8 @@ crypto-js (암호화)
 MUI (인터페이스)
 Mysql, mariadb (데이터 베이스)
 
+### 사용 모듈 (server) :
 
-### 사용 모듈 (server) : 
         "bcrypt": "^5.0.1",
         "cookie-parser": "~1.4.4",
         "cors": "^2.8.5",
@@ -85,9 +88,9 @@ Mysql, mariadb (데이터 베이스)
         "sequelize": "^6.12.5",
         "sequelize-cli": "^6.3.0",
         "ws": "^8.4.0"
-        
 
-### 사용 모듈 (client) : 
+### 사용 모듈 (client) :
+
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@material-ui/core": "^4.12.3",
@@ -137,14 +140,25 @@ Mysql, mariadb (데이터 베이스)
     "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1",
     "ws": "^8.4.0"
-    
-    
-    
+
 ### 주요 기능
 
-
+- 메인페이지 : `MUI` `styled-components` `boxicons` `redux`
+- 로그인&지갑 : `crypto-js` `eth-lightwallet` `redux`
+- 블록정보 페이지 : `sequelize` `mysql2`
+- 마이닝 페이지 : `ws` `axios`
 
 ## 발생한 이슈와 해결방법
 
+다른 OS 환경에서 테스트 중 빈번한 모듈에러
 
-## 디렉토리 설명
+> > 서버 또는 클라이언트의 package-lock.json의 재작성으로 해결
+> > 웹소켓 서버접속시 원장 반복되는 원장불일치 오류
+> > 코드 작성시 비교조건 오류로 인한 수정 (개인적 오타)
+> > 지갑 생성후 복구 시 기존에 있던 지갑인지 확인하는 문제
+> > 지갑 관련 데이터 DB에 저장하는 것으로 해결
+> > 클라이언트에서 실시간으로 블록의 변화를 확인
+> > 클라이언트가 웹소켓에 접속하는 것으로 해결
+> > 블록 생성 정보가 DB에 들어갈 경우 DB에서 블록정보 검색에 실패
+> > DB자료구조 변경으로 해결 (JSON 형식을 STRING으로 변환)
+
