@@ -16,6 +16,13 @@ Member.
 
 #### 이민주: [깃허브] (https://github.com/codecocos) :strawberry:
 
+1. 모듈 설치
+cd client && server 
+npm i
+
+2. 서버 열기
+npm run start1 / start2 / start3
+
 ## 목차
 
 [1.개요](#개요)
